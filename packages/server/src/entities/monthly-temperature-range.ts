@@ -1,14 +1,24 @@
-import { Column, Entity } from 'typeorm'
+import { Column, Entity, ManyToOne } from 'typeorm'
 import { MonthlyTemperatureRange as IMonthlyTemperatureRange } from '@peashoot/types'
 import { Temperature } from '../values/temperature'
+import { Location } from './location'
 
 @Entity()
-export class MonthlyTemperatureRange extends IMonthlyTemperatureRange {
+export class MonthlyTemperatureRange implements IMonthlyTemperatureRange {
 	@Column()
-	month!: number
+	id!: string
 
-	@Column(() => Temperature)
-	min!: Temperature
-	@Column(() => Temperature)
-	max!: Temperature
+    @Column()
+    month!: number
+
+	@ManyToOne(()=>Location, (location) => location.monthlyTemps)
+    location!: Location
+
+    @Column(() => Temperature)
+    min!: Temperature
+    
+    @Column(() => Temperature)
+    max!: Temperature
+
+
 }
