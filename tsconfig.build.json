@@ -5,6 +5,7 @@
 		"moduleResolution": "NodeNext",
 		"strict": true,
 		"outDir": "./dist",
+		"rootDir": ".",
 		"experimentalDecorators": true,
 		"emitDecoratorMetadata": true,
 		"noImplicitOverride": true,
