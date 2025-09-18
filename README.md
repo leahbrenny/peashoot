@@ -18,8 +18,15 @@ Each package is independently versioned and can be developed, tested, and deploy
 1. Ensure you have the required tools:
    - Node.js (v18 or later)
    - npm (v9 or later)
+   - Git Large File Storage (Git LFS)
+  
+2. Install Git LFS and initialize it:
+```bash
+brew install git-lfs
+git lfs install
+```
 
-2. Clone and install:
+3. Clone and install:
 ```bash
 git clone https://github.com/mike-north/peashoot.git
 cd peashoot
